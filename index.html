@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عقد شراء منظومة طاقة شمسية | النصر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold:    #C9A84C;
+      --gold-lt: #E8C97A;
+      --sun:     #F5A623;
+      --deep:    #0A1628;
+      --navy:    #0D2045;
+      --mid:     #1A3A6E;
+      --white:   #F8F4EE;
+      --gray:    #8A9BB5;
+      --whatsapp:#25D366;
+      --whatsapp-dark:#128C7E;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: 'Cairo', 'Tajawal', sans-serif; 
+      background: linear-gradient(135deg, var(--deep) 0%, var(--navy) 100%); 
+      color: var(--white); 
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
+
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: .6; }
+
+    .contract-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.03);
+      border: none;
+      border-radius: 0;
+      padding: 40px 5%;
+      box-shadow: none;
+      backdrop-filter: blur(10px);
+    }
+
+    /* HEADER */
+    .contract-header {
+      text-align: center;
+      border-bottom: 1px dashed rgba(201, 168, 76, 0.4);
+      padding-bottom: 30px;
+      margin-bottom: 40px;
+    }
+    .logo-icon { width: 56px; height: 56px; margin: 0 auto 15px; }
+    .contract-header h1 { font-size: 2rem; font-weight: 900; color: var(--gold); margin-bottom: 5px; }
+    .contract-header p { font-size: 0.95rem; color: var(--gray); }
+
+    /* SECTION STYLES */
+    .section-block { margin-bottom: 40px; background: rgba(0,0,0,0.15); padding: 25px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
+    .section-title { font-size: 1.2rem; font-weight: 700; color: var(--gold-lt); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+    .section-title::before { content: ''; display: inline-block; width: 6px; height: 20px; background: var(--gold); border-radius: 4px; }
+
+    /* FORM FIELDS */
+    .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px; }
+    .form-field { display: flex; flex-direction: column; gap: 8px; }
+    .form-field label { font-size: 0.85rem; color: var(--gray); font-weight: 600; }
+    .form-field input, .form-field select {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px; color: var(--white); font-family: inherit; font-size: 0.95rem; padding: 12px 16px; transition: all 0.3s ease;
+    }
+    .form-field input:focus, .form-field select:focus { outline: none; border-color: var(--gold); background: rgba(201, 168, 76, 0.05); }
+    .form-field select option { background: var(--navy); color: var(--white); }
+
+    /* LEGAL CLAUSES */
+    .legal-text { font-size: 0.95rem; color: #D1D8E0; line-height: 1.9; text-align: justify; }
+    .clause { margin-bottom: 25px; }
+    .clause-title { font-weight: 700; color: var(--white); margin-bottom: 10px; font-size: 1.05rem; }
+    .clause-title span { color: var(--gold); margin-left: 5px; }
+    .legal-list { list-style: none; padding-right: 15px; margin-top: 10px; }
+    .legal-list li { margin-bottom: 8px; position: relative; }
+    .legal-list li::before { content: '-'; position: absolute; right: -15px; color: var(--gold); }
+
+    /* SIGNATURES */
+    .signatures { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; padding-top: 30px; border-top: 1px dashed rgba(201,168,76,0.3); }
+    .sig-box { text-align: center; }
+    .sig-box h4 { color: var(--gold-lt); margin-bottom: 40px; font-size: 1.1rem; }
+    .sig-line { border-bottom: 1px solid var(--gray); width: 80%; margin: 0 auto 10px; }
+    .sig-label { font-size: 0.85rem; color: var(--gray); }
+
+    /* BUTTONS */
+    .btn-container { display: flex; gap: 15px; justify-content: center; margin-top: 50px; padding-bottom: 40px; }
+    
+    /* WhatsApp Button Style */
+    .btn-whatsapp { 
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%); 
+      color: #fff; 
+      border: none; 
+      border-radius: 50px; 
+      padding: 14px 32px; 
+      font-size: 1.1rem; 
+      font-weight: 700; 
+      cursor: pointer; 
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-whatsapp:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4); 
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="contract-wrapper">
+    
+    <div class="contract-header">
+      <div class="logo-icon">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="22" r="10" fill="#C9A84C" opacity=".9"/>
+          <line x1="22" y1="2" x2="22" y2="8" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="22" y1="36" x2="22" y2="42" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="2" y1="22" x2="8" y2="22" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="36" y1="22" x2="42" y2="22" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h1>عقد بيع وتركيب منظومة طاقة شمسية (بالتقسيط)</h1>
+      <p>إنه في يوم <input type="date" style="background:transparent; border:none; border-bottom:1px solid var(--gray); color:var(--white); font-family:inherit; outline:none;"> تم الاتفاق والتراضي بين كل من:</p>
+    </div>
+
+    <!-- استبدل الرقم 000000000000 بالرقم الفعلي -->
+    <form onsubmit="event.preventDefault(); window.open('https://wa.me/2499932199249?text=' + encodeURIComponent('أوافق على جميع بنود عقد شراء منظومة الطاقة الشمسية وأرغب في إرسال التوقيع واعتماد الطلب.'), '_blank');">
+      
+      <!-- أطراف التعاقد -->
+      <div class="section-block">
+        <h3 class="section-title">أطراف التعاقد</h3>
+        <div class="legal-text" style="margin-bottom: 20px;">
+          <strong>الطرف الأول (البائع):</strong> مؤسسة النصر لتجارة الطاقة الشمسية، ومقرها: بورتسودان – السوق الكبير، عمارة غريب. ويمثلها في هذا العقد السيد/ <strong>أحمد شوقي عثمان إبراهيم</strong> بصفته (المدير/المندوب)، بموجب إثبات شخصية (جواز سفر رقم: <strong>P11506751</strong> / رقم وطني: <strong>120-9974-5544</strong>).
+        </div>
+        
+        <div class="legal-text" style="margin-bottom: 15px;"><strong>الطرف الثاني (المشتري):</strong></div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>الاسم الرباعي</label>
+            <input type="text" required />
+          </div>
+          <div class="form-field">
+            <label>رقم الإثبات (الرقم الوطني/الجواز)</label>
+            <input type="text" required />
+          </div>
+          <div class="form-field">
+            <label>رقم الهاتف الأساسي</label>
+            <input type="tel" required />
+          </div>
+          <div class="form-field">
+            <label>جهة العمل / المهنة</label>
+            <input type="text" required />
+          </div>
+        </div>
+
+        <div class="legal-text" style="margin-bottom: 10px; margin-top: 10px;"><strong>عنوان سكن الطرف الثاني (موقع التركيب):</strong></div>
+        <div class="form-row">
+          <div class="form-field"><label>الولاية</label><input type="text" required /></div>
+          <div class="form-field"><label>المحلية</label><input type="text" required /></div>
+          <div class="form-field"><label>الحي / المربع</label><input type="text" required /></div>
+          <div class="form-field"><label>رقم المنزل / المعلم البارز</label><input type="text" required /></div>
+        </div>
+      </div>
+
+      <!-- المواصفات والماليات -->
+      <div class="section-block">
+        <h3 class="section-title">مواصفات المنظومة والتفاصيل المالية</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label>سعة المنظومة (الباقة)</label>
+            <select required>
+              <option value="" disabled selected>اختر...</option>
+              <option>1 كيلوواط (اقتصادية)</option>
+              <option>5 كيلوواط (منزلية مميزة)</option>
+              <option>5 كيلوواط (تجارية)</option>
+              <option>أخرى (تُحدد في الملحق)</option>
+            </select>
+          </div>
+          <div class="form-field"><label>إجمالي قيمة العقد (جنيه سوداني)</label><input type="number" required /></div>
+          <div class="form-field"><label>الدفعة المقدمة (جنيه سوداني)</label><input type="number" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label>المبلغ المتبقي للتقسيط</label><input type="number" required /></div>
+          <div class="form-field">
+            <label>فترة التقسيط</label>
+            <select required>
+              <option value="" disabled selected>اختر...</option>
+              <option>6 أشهر</option>
+              <option>12 شهراً</option>
+              <option>24 شهراً</option>
+              <option>36 شهراً</option>
+            </select>
+          </div>
+          <div class="form-field"><label>قيمة القسط الشهري</label><input type="number" required /></div>
+          <div class="form-field"><label>تاريخ استحقاق القسط (من كل شهر)</label><input type="number" min="1" max="31" placeholder="مثال: 1 أو 25" required /></div>
+        </div>
+      </div>
+
+      <!-- البنود القانونية -->
+      <div class="section-block legal-text">
+        <h3 class="section-title">البنود والشروط القانونية</h3>
+        
+        <div class="clause">
+          <div class="clause-title"><span>البند الأول:</span> موضوع العقد</div>
+          <p>باع الطرف الأول وأسقط وتنازل للطرف الثاني، القابل لذلك، منظومة طاقة شمسية بالمواصفات المحددة أعلاه، ويلتزم الطرف الأول بتوريدها وتركيبها وتشغيلها في العنوان المذكور للطرف الثاني.</p>
+        </div>
+
+        <div class="clause">
+          <div class="clause-title"><span>البند الثاني:</span> شروط السداد</div>
+          <p>يقر الطرف الثاني بدفع الدفعة المقدمة عند توقيع هذا العقد، ويلتزم بسداد الأقساط الشهرية المتبقية في تاريخ الاستحقاق المتفق عليه من كل شهر ميلادي، وذلك بموجب إيصالات رسمية صادرة من الطرف الأول أو عبر التحويل البنكي لحساب الطرف الأول المعتمد <strong>(بنك الخرطوم - حساب رقم: 4046802 - باسم: أحمد شوقي عثمان إبراهيم)</strong>.</p>
+        </div>
+
+        <div class="clause">
+          <div class="clause-title"><span>البند الثالث:</span> الاحتفاظ بالملكية وحظر التصرف</div>
+          <p>يتفق الطرفان اتفاقاً نهائياً لا رجعة فيه على أن المنظومة الشمسية ومكوناتها تظل مملوكة ملكية خالصة للطرف الأول (البائع)، ولا تنتقل ملكيتها للطرف الثاني إلا بعد سداد كامل قيمة العقد (الدفعة الأخيرة). وبناءً عليه:</p>
+          <ul class="legal-list">
+            <li>يُحظر على الطرف الثاني بيع، أو رهن، أو هبة، أو تأجير المنظومة للغير قبل سداد كامل الثمن.</li>
+            <li>يُمنع منعاً باتاً نقل المنظومة من الموقع المُركبة فيه المذكور في العقد إلى أي موقع آخر إلا بموافقة كتابية مسبقة من الطرف الأول وإشراف فنييه.</li>
+          </ul>
+        </div>
+
+        <div class="clause">
+          <div class="clause-title"><span>البند الرابع:</span> الإخلال بشروط السداد (التعثر)</div>
+          <p>في حال تأخر الطرف الثاني عن سداد قسطين متتاليين دون عذر يقبله الطرف الأول، يُعتبر هذا العقد مفسوخاً من تلقاء نفسه دون الحاجة إلى إنذار أو حكم قضائي، ويحق للطرف الأول الآتي:</p>
+          <ul class="legal-list">
+            <li>استرداد المنظومة (فكها ومصادرتها) فوراً من موقع الطرف الثاني.</li>
+            <li>خصم نسبة (يُتفق عليها) من المبالغ المدفوعة سابقاً كمقابل إهلاك للمنظومة وأجور الفك والتركيب، ورد الباقي (إن وُجد) للطرف الثاني.</li>
+          </ul>
+        </div>
+
+        <div class="clause">
+          <div class="clause-title"><span>البند الخامس:</span> الضمان والصيانة</div>
+          <p>يضمن الطرف الأول المنظومة ضد العيوب المصنعية حسب مدد الضمان المرفقة مع كل مكون (الألواح، البطاريات، الانفرتر). <strong>ويسقط الضمان نهائياً في الحالات التالية:</strong></p>
+          <ul class="legal-list">
+            <li>تدخل أي فني غير معتمد من الطرف الأول لعمل صيانة أو تعديل على المنظومة.</li>
+            <li>إضافة أحمال كهربائية تتجاوز السعة القصوى المتفق عليها للانفرتر.</li>
+            <li>الأعطال الناتجة عن الكوارث الطبيعية، الحرائق، أو سوء الاستخدام الواضح (مثل سكب السوائل، كسر الألواح العمدي).</li>
+          </ul>
+        </div>
+
+        <div class="clause">
+          <div class="clause-title"><span>البند السادس:</span> الإقرار والتوقيع</div>
+          <p>يُقر الطرف الثاني بأنه عاين الموقع وتأكد من ملاءمته للتركيب، وأنه قرأ كافة بنود هذا العقد وتفهمها تفهماً نافياً للجهالة الشرعية والقانونية، وقبل بها. وقد حُرر هذا العقد من نسختين أصليتين، بيد كل طرف نسخة للعمل بموجبها.</p>
+        </div>
+      </div>
+
+      <!-- التوقيعات -->
+      <div class="signatures">
+        <div class="sig-box">
+          <h4>الطرف الأول (الشركة)</h4>
+          <div class="sig-line"></div>
+          <div class="sig-label">أحمد شوقي عثمان إبراهيم</div>
+        </div>
+        <div class="sig-box">
+          <h4>الطرف الثاني (المشتري)</h4>
+          <div class="sig-line"></div>
+          <div class="sig-label">الاسم والتوقيع والتبصيم</div>
+        </div>
+      </div>
+
+      <div class="signatures" style="margin-top: 30px; padding-top: 0; border: none;">
+        <div class="sig-box">
+          <h4>الشاهد الأول</h4>
+          <div class="sig-line"></div>
+          <div class="sig-label">الاسم ورقم الإثبات</div>
+        </div>
+        <div class="sig-box">
+          <h4>الشاهد الثاني</h4>
+          <div class="sig-line"></div>
+          <div class="sig-label">الاسم ورقم الإثبات</div>
+        </div>
+      </div>
+
+      <!-- زر واتساب -->
+      <div class="btn-container">
+        <button type="submit" class="btn-whatsapp">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.031 0C5.39 0 0 5.39 0 12.031c0 2.125.553 4.195 1.604 6.015L.17 24l6.115-1.604A11.96 11.96 0 0 0 12.03 24c6.641 0 12.031-5.39 12.031-12.031S18.672 0 12.031 0zm0 22.015a9.96 9.96 0 0 1-5.086-1.39l-.364-.216-3.782.991.991-3.782-.216-.364A9.96 9.96 0 0 1 2.016 12.03C2.016 6.505 6.505 2.016 12.03 2.016c5.526 0 10.016 4.49 10.016 10.015 0 5.525-4.49 10.015-10.016 10.015zm5.508-7.513c-.302-.151-1.792-.884-2.069-.986-.277-.101-.478-.151-.679.151-.202.302-.78 1.007-.957 1.208-.176.202-.353.227-.655.076a8.21 8.21 0 0 1-2.424-1.498 9.07 9.07 0 0 1-1.683-2.09c-.176-.302-.018-.465.133-.616.136-.136.302-.353.453-.529.151-.176.202-.302.302-.504.101-.202.05-.378-.025-.529-.076-.151-.679-1.637-.932-2.242-.246-.59-.496-.51-.679-.519-.176-.009-.378-.009-.58-.009a1.12 1.12 0 0 0-.806.378c-.277.302-1.058 1.033-1.058 2.519s1.083 2.92 1.234 3.121c.151.202 2.128 3.25 5.152 4.554.719.31 1.28.495 1.718.634.722.228 1.38.196 1.898.118.58-.088 1.792-.731 2.043-1.436.252-.705.252-1.31.176-1.436-.076-.126-.277-.202-.58-.353z"/>
+          </svg>
+          أوافق على البنود وأرغب في إرسال التوقيع
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>
